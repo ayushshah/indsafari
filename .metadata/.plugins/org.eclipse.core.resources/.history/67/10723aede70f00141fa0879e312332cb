@@ -1,0 +1,5 @@
+package com.example.pleasework;
+
+public class MapOverlay extends com.google.android.maps.Overlay{
+
+}

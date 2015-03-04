@@ -1,0 +1,97 @@
+package com.example.pleasework;
+
+import java.util.List;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity2 extends ActionBarActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		DataHelper dh = new DataHelper(this);
+		List<String> names;
+		// LoadSpinners();
+
+		// }
+
+		// private void LoadSpinners() {
+
+		Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+		ArrayAdapter adapter = ArrayAdapter.createFromResource(this,
+				R.array.states_array, R.layout.spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
+
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parentView,
+					View selectedItemView, int position, long id) {
+				String stateValue = ((TextView) (selectedItemView)).getText()
+						.toString();
+
+				names = dh.spinContent("type", "tblhotels", "state", stateValue);
+
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parentView) {
+				// your code here
+			}
+
+		});
+
+		Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+
+		ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this,
+				R.array.type_array, R.layout.spinner_item);
+		adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner2.setAdapter(adapter2);
+
+	}
+
+	public void okay(View v) {
+		String state = ((Spinner) (findViewById(R.id.spinner)))
+				.getSelectedItem().toString();
+		String type = ((Spinner) (findViewById(R.id.spinner2)))
+				.getSelectedItem().toString();
+
+		Intent intent = new Intent(this, ListOfHotels.class);
+		intent.putExtra("data1", state);
+		intent.putExtra("data2", type);
+		intent.putExtra("data3", "Hotels");
+		startActivity(intent);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+}

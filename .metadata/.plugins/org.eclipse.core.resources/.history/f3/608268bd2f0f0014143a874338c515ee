@@ -1,0 +1,6 @@
+package snippet;
+
+public class Snippet {
+	<color name="errorColor">#f00</color>
+}
+

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="states_array">
+        <item>Andhra Pradesh </item>
+        <item>Assam</item>
+        <item>Chandigarh</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu And Kashmir</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Meghalaya</item>
+        <item>Orissa</item>
+        <item>Pondicherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
+    </string-array>
+    <string-array name="type_array">
+        <item>All</item>
+        <item>5 Star</item>
+        <item>5 Star Deluxe</item>
+        <item>4 Star</item>
+        <item>Heritage Basic</item>
+        <item>Heritage Grand</item>
+        <item>Heritage Classic</item>
+    </string-array>
+    <string-array name="region_array">
+        <item>North</item>
+        <item>South</item>
+        <item>West</item>
+        <item>East</item>
+        <item>North East</item>
+    </string-array>
+    <string-array name="city_array">
+        <item>Darjeeling</item>
+        <item>Kullu</item>
+        <item>Delhi</item>
+        <item>Gurgaon</item>
+        <item>Leh</item>
+        <item>New Delhi</item>
+        <item>Srinagar</item>
+        <item>Coimbatore</item>
+        <item>Coonoor</item>
+        <item>Kolkata</item>
+        <item>Patna</item>
+        <item>Siliguri</item>
+        <item>Ghaziabad</item>
+        <item>Haryana</item>
+        <item>Guwahati</item>
+        <item>Eranakulam</item>
+        <item>Bangalore</item>
+        <item>Calicut</item>
+        <item>Chennai</item>
+        <item>Hubli</item>
+        <item>Hyderabad</item>
+        <item>Kasaragod</item>
+        <item>Kerala</item>
+        <item>Kochi</item>
+        <item>Mangalore</item>
+        <item>Thiruvananthapuram</item>
+        <item>Udupi</item>
+        <item>Indore</item>
+        <item>Mumbai</item>
+        <item>Nashik</item>
+        <item>Pune</item>
+        <item>Bhubaneswar</item>
+        <item>Agra</item>
+        <item>Amritsar</item>
+        <item>Chandigarh</item>
+        <item>Jaipur</item>
+        <item>Varanasi</item>
+        <item>Alappuzha</item>
+        <item>Ernakulam</item>
+        <item>Madurai</item>
+        <item>Mysore</item>
+        <item>Pondicherry</item>
+        <item>Secunderabad</item>
+        <item>Ahmedabad</item>
+        <item>Bhopal</item>
+        <item>Nagpur</item>
+        <item>Panaji</item>
+        <item>Bhubaneshwar</item>
+        <item>Gaya</item>
+        <item>Nalanda</item>
+        <item>Port Blair</item>
+        <item>Puri</item>
+        <item>Faridabad</item>
+        <item>Gurgoan</item>
+        <item>Haridwar</item>
+        <item>Kashmir</item>
+        <item>Noida</item>
+        <item>Udaipur</item>
+        <item>Gangtok</item>
+        <item>Cochin</item>
+        <item>Kannur</item>
+        <item>Nungambakkam</item>
+        <item>Salem</item>
+        <item>Trichy</item>
+        <item>Vijaywada</item>
+        <item>Visakhapatnam</item>
+        <item>Calangute</item>
+        <item>Goa</item>
+        <item>Jabalpur</item>
+        <item>Khajuraho</item>
+        <item>Surat</item>
+        <item>Vadodara</item>
+        <item>Dhanbad</item>
+        <item>Jharkhand</item>
+        <item>Dehradun</item>
+        <item>Jalandhar</item>
+        <item>Lucknow</item>
+        <item>Meerut</item>
+        <item>Moga</item>
+        <item>Nawanshar</item>
+        <item>Panchkula</item>
+        <item>Imphal</item>
+        <item>Bijapur</item>
+        <item>Thrissur</item>
+        <item>Ahemdabad</item>
+        <item>Aurangabad</item>
+        <item>Chandrapur</item>
+        <item>Jamnagar</item>
+        <item>Kolhapur</item>
+        <item>Margao</item>
+        <item>Raipur</item>
+        <item>Rajkot</item>
+        <item>Vasco-Da-Gama</item>
+    </string-array>
+
+</resources>

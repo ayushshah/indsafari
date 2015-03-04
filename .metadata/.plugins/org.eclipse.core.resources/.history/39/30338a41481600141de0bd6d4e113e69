@@ -1,0 +1,7 @@
+package com.example.pleasework;
+
+import android.widget.ArrayAdapter;
+
+public class CustomAdapter extends ArrayAdapter<T> {
+
+}

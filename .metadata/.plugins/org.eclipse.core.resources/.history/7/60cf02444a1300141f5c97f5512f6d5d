@@ -1,0 +1,87 @@
+package com.example.pleasework;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.Toast;
+
+public class ListOfHotels extends ActionBarActivity {
+	private static ArrayList<String> nameList;
+	String state, type;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_list_of_hotels);
+		final String[] items = new String[1000];
+		final ListAdapter adapter;
+		ListView listHotel = (ListView) findViewById(R.id.hotelList);
+		Intent intent = getIntent();
+		final String origin = intent.getStringExtra("data3");
+	    List<String> names;
+		if(origin.equals("Hotels")){
+			DataHelper dh = new DataHelper(this);
+			state = intent.getStringExtra("data1");
+			type = intent.getStringExtra("data2");
+			names = dh.selectAll(state, type);
+		}
+		else{
+			DataHelper dh = new DataHelper(this);
+			final String region = intent.getStringExtra("data1");
+			final String city = intent.getStringExtra("data2");
+			type = origin;
+		    state = intent.getStringExtra("data4");
+			names = dh.selectAll2(region, city, state, type);
+		}
+		nameList = new ArrayList<String>();
+		int i = 0;
+		for (String name : names) {
+			items[i] = name;
+			nameList.add(name);
+			i++;
+		}
+
+		adapter = new ListAdapter(this, nameList);
+		listHotel.setAdapter(adapter);
+
+		listHotel.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				
+				String name = items[arg2];
+				Intent intent2 = new Intent(ListOfHotels.this, Details.class);
+				intent2.putExtra("data1", name);
+				intent2.putExtra("data2", state);
+				startActivity(intent2);
+
+			}
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.list_of_hotels, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+}

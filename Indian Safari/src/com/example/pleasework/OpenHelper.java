@@ -1,0 +1,35 @@
+package com.example.pleasework;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class OpenHelper extends SQLiteOpenHelper {
+	private static final String DATABASE_NAME = "bird.db";
+	private static final int DATABASE_VERSION = 5;
+	public static final String HOTEL_TABLE_NAME = "tblhotels";
+	public static final String HOTEL_TABLE_OPERATORS = "tbloperators";
+	
+	public OpenHelper(Context context)
+	{
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+	}
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		String query = "CREATE TABLE tblhotels (_id INTEGER PRIMARY " + "KEY AUTOINCREMENT, name TEXT, address TEXT, state TEXT, phone TEXT, fax TEXT, email TEXT, website TEXT, type TEXT,rooms TEXT);";
+		String query2 = "CREATE TABLE tbloperators (_id INTEGER PRIMARY " + "KEY AUTOINCREMENT, name TEXT, address TEXT, phone TEXT, fax TEXT, email TEXT, region TEXT, city TEXT, state TEXT,person TEXT, type TEXT)";
+		db.execSQL(query);
+		db.execSQL(query2);
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int arg1, int arg2) {
+		// TODO Auto-generated method stub
+		String query = "DROP TABLE IF EXISTS tblhotels";
+		String query2 = "DROP TABLE IF EXISTS tbloperators";
+		db.execSQL(query);
+		db.execSQL(query2);
+		onCreate(db);
+
+	}
+}

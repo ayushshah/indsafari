@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="states_array">
+        <item>Andhra Pradesh </item>
+        <item>Assam</item>
+        <item>Chandigarh</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu And Kashmir</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Meghalaya</item>
+        <item>Orissa</item>
+        <item>Pondicherry</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+        <item>West Bengal</item>
+    </string-array>
+    <string-array name="type_array">
+        <item>All</item>
+        <item>5 Star</item>
+        <item>5 Star Deluxe</item>
+        <item>4 Star</item>
+        <item>Heritage Basic</item>
+        <item>Heritage Grand</item>
+        <item>Heritage Classic</item>
+    </string-array>
+    <string-array name="region_array">
+        <item>North</item>
+        <item>South</item>
+        <item>West</item>
+        <item>East</item>
+        <item>North East</item>
+    </string-array>
+    
+    
+
+</resources>

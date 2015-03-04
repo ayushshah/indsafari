@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Indian Safari/bin/dexedLibs/google-play-services_lib-c88aae40bae3cb96a5f64de7cf78e7dd.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Indian Safari/bin/dexedLibs/appcompat_v7-92f2537728f1e2e06da150b16ccc6e76.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Indian Safari/bin/dexedLibs/google-play-services-8f4e7e75f99bd591ffa42cbc14cb1dea.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Indian Safari/bin/dexedLibs/android-support-v7-appcompat-545cd19f8cccdabe034c5cb0de7bc6ce.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Indian Safari/bin/dexedLibs/android-support-v4-d89b9bd004c6b8d0535c908e928f0a27.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

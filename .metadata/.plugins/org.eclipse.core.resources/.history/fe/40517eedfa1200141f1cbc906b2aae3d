@@ -1,0 +1,43 @@
+package com.example.pleasework;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class OpenHelper extends SQLiteOpenHelper {
+	private static final String DATABASE_NAME = "bird.db";
+	private static final int DATABASE_VERSION = 2;
+	public static final String HOTEL_TABLE_NAME = "tblhotels";
+	public static final String HOTEL_TABLE_OPERATOR = "tbloperators";
+	/*	public static final String P_NAME = "name";
+	public static final String P_ID = "_id";
+	public static final String P_ADDRESS = "address";
+	public static final String P_STATE = "state";
+	public static final String P_PHONE = "phone";
+	public static final String P_FAX = "fax";
+	public static final String P_EMAIL = "email";
+	public static final String P_WEBSITE = "website";
+	public static final String P_TYPE = "type";
+	public static final String P_ROOMS = "rooms";
+*/
+	public OpenHelper(Context context)
+	{
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+	}
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		String query = "CREATE TABLE tblhotels (_id INTEGER PRIMARY " + "KEY AUTOINCREMENT, name TEXT, address TEXT, state TEXT, phone TEXT, fax TEXT, email TEXT, website TEXT, type TEXT,rooms TEXT);";
+		String query2 = "CREATE TABLE tbloperators(_id INTEGER PRIMARY " + "KEY AUTOINCREMENT, name TEXT, address TEXT, phone TEXT, fax TEXT, email TEXT, region TEXT, city TEXT, state TEXT,person TEXT, type TEXT)";
+		db.execSQL(query);
+		db.execSQL(query2);
+	}
+
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int arg1, int arg2) {
+		// TODO Auto-generated method stub
+		String query = "DROP TABLE IF EXISTS tblpeople";
+		db.execSQL(query);
+		onCreate(db);
+
+	}
+}

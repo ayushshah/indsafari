@@ -1,0 +1,127 @@
+package com.example.pleasework;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
+
+public class FurtherDetails extends ActionBarActivity {
+	String type, state, region, city;
+	DataHelper dh;
+	List<String> names;
+	final String[] items2 = new String[100];
+	private static ArrayList<String> nameList;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_further_details);
+		Intent intent = getIntent();
+		type = intent.getStringExtra("Type");
+		Toast.makeText(getApplicationContext(), "Type: " + type,
+				Toast.LENGTH_LONG).show();
+
+		/*
+		 * Spinner spinner2 = (Spinner) findViewById(R.id.spinState);
+		 * 
+		 * ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this,
+		 * R.array.states_array, R.layout.spinner_item);
+		 * adapter2.setDropDownViewResource
+		 * (android.R.layout.simple_spinner_dropdown_item);
+		 * spinner2.setAdapter(adapter2);
+		 */
+
+		Spinner spinner = (Spinner) findViewById(R.id.spinRegion);
+
+		ArrayAdapter adapter = ArrayAdapter.createFromResource(this,
+				R.array.region_array, R.layout.spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
+
+	/*	Spinner spinner3 = (Spinner) findViewById(R.id.spinCity);
+
+		ArrayAdapter adapter3 = ArrayAdapter.createFromResource(this,
+				R.array.city_array, R.layout.spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner3.setAdapter(adapter3);
+*/
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parentView,
+					View selectedItemView, int position, long id) {
+				String regionValue = ((TextView) (selectedItemView)).getText()
+						.toString();
+
+				names = dh.spinContent("state", "tbloperators", "region",
+						regionValue);
+				nameList = new ArrayList<String>();
+				int i = 0;
+				for (String name : names) {
+					items2[i] = name;
+					nameList.add(name);
+					i++;
+				}
+				Spinner spinner2 = (Spinner) findViewById(R.id.spinState);
+				ArrayAdapter<String> a = new ArrayAdapter<String>(
+						FurtherDetails.this,
+						android.R.layout.simple_spinner_item, nameList);
+				a.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				spinner2.setAdapter(a);
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parentView) {
+				// your code here
+			}
+
+		});
+
+	}
+
+	public void takeToList(View v) {
+
+		state = ((Spinner) (findViewById(R.id.spinState))).getSelectedItem()
+				.toString();
+		region = ((Spinner) (findViewById(R.id.spinRegion))).getSelectedItem()
+				.toString();
+		city = ((Spinner) (findViewById(R.id.spinCity))).getSelectedItem()
+				.toString();
+
+		Intent intent = new Intent(this, ListOfHotels.class);
+		intent.putExtra("data1", region);
+		intent.putExtra("data2", city);
+		intent.putExtra("data3", type);
+		intent.putExtra("data4", state);
+		startActivity(intent);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.further_details, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+}

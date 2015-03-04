@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Indian Safari</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_list_of_hotels">List</string>
+    <string name="title_activity_details">Details</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_taj_mahal">Hotels</string>
+    <string name="title_activity_options_menu">Menu</string>
+    <string name="title_activity_further_details">Select a City</string>
+
+</resources>
